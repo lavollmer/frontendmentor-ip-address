@@ -1,11 +1,12 @@
 import React from 'react'
 import Arrow from "../assets/icon-arrow.svg"
+import '../header.css'
 
 function searchbar() {
     return (
-        <div className="flex flex-row justify-center items-center">
-            <input type="text" name="search" placeholder="Search for an IP address or domain" className="searchbar" />
-            <button className="search-button">
+        <div className="search-container">
+            <input type="text" name="search" placeholder="Search for an IP address or domain" className="w-100 h-100" />
+            <button className="bg-black rounded-full">
                 <img src={Arrow} alt="Search Icon" />
             </button>
         </div>
