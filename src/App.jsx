@@ -17,7 +17,8 @@ function App() {
       try {
         // get request through axios
         // process.env.GEOLOCATION_API
-        const response = await axios.get(process.env.GEOLOCATION_API)
+        const API = process.env.GEOLOCATION_API
+        const response = await axios.get('API')
         setLocationData(response.data);
       } catch (err) {
         setError('Error fetching location data.');
