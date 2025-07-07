@@ -1,6 +1,7 @@
 import './App.css'
 import Ipaddress from "./components/ipaddress"
 import Header from "./components/header"
+import Map from "./components/map"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <div className='desktop-ip'>
           <Ipaddress />
         </div>
+        <Map />
       </div>
     </>
   )
