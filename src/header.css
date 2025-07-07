@@ -83,4 +83,14 @@ h2 {
 .search-box {
     display: flex;
     flex-direction: column;
+    padding: 6px;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    width: 1px;
+    background-color: grey;
+    height: 60%;
+    margin-top: 16px;
 }
