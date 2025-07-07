@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ipaddress() {
+function ipaddress({address}) {
     return (
         <div className='ip-search'>
             <div className='search-box'>
@@ -10,7 +10,7 @@ function ipaddress() {
             <div className='line'></div>
             <div className='search-box'>
                 <h1>LOCATION</h1>
-                <h2>COORDINATES</h2>
+                <h2>{address.country}</h2>
             </div>
             <div className='line'></div>
             <div className='search-box'>
