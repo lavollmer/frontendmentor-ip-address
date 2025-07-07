@@ -6,8 +6,8 @@ function searchbar() {
     return (
         <div className="search-container">
             <input type="text" name="search" placeholder="Search for an IP address or domain" className="w-100 h-100" />
-            <button className="bg-black rounded-full">
-                <img src={Arrow} alt="Search Icon" />
+            <button className="search-button">
+                <img src={Arrow} alt="Search Icon"/>
             </button>
         </div>
     )

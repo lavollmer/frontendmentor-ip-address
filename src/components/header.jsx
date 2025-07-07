@@ -8,8 +8,8 @@ function Header() {
     return (
         <div className="header-container">
             <img src={DesktopImage} alt="Desktop Background" className="desktop-background" />
-            <h1 className='title-container'>IP Address Tracker</h1>
-            <div>
+            <div className='header-text'>
+                <h1 className='title-container'>IP Address Tracker</h1>
                 <Search />
             </div>
         </div>
