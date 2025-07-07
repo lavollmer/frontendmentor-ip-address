@@ -5,7 +5,7 @@ import Header from "./components/header"
 function App() {
     return (
       <>
-        <div>
+        <div class='desktop-background'>
           <Header />
           <Ipaddress />
         </div>
