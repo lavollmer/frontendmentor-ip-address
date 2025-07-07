@@ -51,6 +51,10 @@ Users should be able to:
 
 ### What I learned
 
+This challenge was to build out an IP Address Tracker app and match it to the design portfolio as much as possible. The IP Address locations will be using IP Geolocation API by IPify and generating the map with LeafletJS. 
+
+I began by setting up the basics of the program with installing Vite, ReactJS, and other aspects of the program.
+
 
 ### Continued development
 
