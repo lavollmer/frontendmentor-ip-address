@@ -62,6 +62,7 @@ I began by setting up the basics of the program with installing Vite, ReactJS, a
 2. I was having a syntax error within my App.jsx file which was unexpected. I was receiving the error of "unexpected token error". I realized while coding I had added an extra import statement at the top of my file without any additional information therefore the program was unable to determine the next steps.
 3. Creating the small grey line between the IP Address sections. I began by creating a border line positioning to the right of the text div box, but it was giving me an additional line. By creating a separate div for the line it allowed more control and flexibility. 
 4. Axios installment  - Helps with making HTPP request in React application
+5. .env file to protect the API geolocation key
 
 ### Useful resources
 
