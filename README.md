@@ -58,7 +58,7 @@ I began by setting up the basics of the program with installing Vite, ReactJS, a
 
 ### Continued development
 
-
+1. You cannot put a button inside of an <input> tag because it is self-closing. You can achieve the visual effect of a button inside a search input field using HTML and CSS positioning. Wrap both the button and input into the parent <div>. Se the container's position to relative and set the button's position to absolute which removes it from the normal document flow.
 
 ### Useful resources
 
