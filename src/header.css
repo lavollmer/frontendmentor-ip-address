@@ -10,6 +10,7 @@
     flex-direction: column;
     color: white;
     font-Family: 'Rubik', sans-serif;
+    font-size: x-large;
 }
 
 .desktop-background {
@@ -58,24 +59,28 @@ input {
 }
 
 h1 {
-    font-size: x-large;
+    font-size: small;
+    font-Family: 'Rubik', sans-serif;
+    color: grey;
 }
 
 h2 {
-    font-size: medium;
+    font-size: large;
+    font-Family: 'Rubik', sans-serif;
 }
 
 .ip-search {
+    display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-top: 10px;
     width: 80%;
     border-radius: 10px;
-    padding: 10px ;
-    font-Family: 'Rubik', sans-serif;
+    padding: 10px;
     background-color: white;
 }
 
 .search-box {
-    flex: display;
+    display: flex;
     flex-direction: column;
 }

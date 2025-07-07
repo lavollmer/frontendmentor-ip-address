@@ -8,15 +8,15 @@ function ipaddress() {
                 <h2>COORDINATES</h2>
             </div>
             <div className='search-box'>
-                <h1>IP ADDRESS</h1>
+                <h1>LOCATION</h1>
                 <h2>COORDINATES</h2>
             </div>
             <div className='search-box'>
-                <h1>IP ADDRESS</h1>
+                <h1>TIMEZONE</h1>
                 <h2>COORDINATES</h2>
             </div>
             <div className='search-box'>
-                <h1>IP ADDRESS</h1>
+                <h1>ISP</h1>
                 <h2>COORDINATES</h2>
             </div>
         </div>
