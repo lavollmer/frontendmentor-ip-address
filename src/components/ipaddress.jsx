@@ -1,9 +1,14 @@
 import React from 'react';
 
-function IpAddress () {
+function ipaddress() {
     return (
-        <div>IpAddress</div>
+        <div className='ip-search'>
+            <div>
+                <h1>IP ADDRESS</h1>
+                <h2>COORDINATES</h2>
+            </div>
+        </div>
     )
 }
 
-export default IpAddress;
+export default ipaddress;
