@@ -5,7 +5,7 @@ import '../header.css'
 function searchbar() {
     return (
         <div className="search-container">
-            <input type="text" name="search" placeholder="Search for an IP address or domain" className="w-100 h-100" />
+            <input type="text" name="search" placeholder="Search for an IP address or domain" />
             <button className="search-button">
                 <img src={Arrow} alt="Search Icon"/>
             </button>
