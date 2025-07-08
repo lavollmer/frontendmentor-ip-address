@@ -87,6 +87,7 @@ body {
 }
 
 .header-text {
+  font-Family: 'Rubik', sans-serif;
   flex-direction: column;
 }
 
@@ -116,8 +117,8 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 10px;
-  width: 80%;
+  align-items: center;
+  width: 90%;
   border-radius: 10px;
   padding: 10px;
   background-color: white;
@@ -142,7 +143,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 180px;
+  margin-top: 30%;
   width: 100%;
 }
 

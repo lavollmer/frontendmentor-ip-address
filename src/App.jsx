@@ -14,9 +14,7 @@ function App() {
   const [locationData, setLocationData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
-  // map position
-  const position = [51.505, -0.09];
+  const [position, setPosition] = useState([32.69922, -117.11281]);
 
   // When the app starts, something will load
   useEffect(() => {
@@ -31,10 +29,10 @@ function App() {
     setLoading(true);
     try {
       const query = searchTerm || '8.8.8.8'
-      const response = await axios.get(`http://localhost:5000/api/data?query=${searchTerm}`)
+      const response = await axios.get(`http://localhost:5000/api/data?query=${query}`);
       console.log(response.data);
       setLocationData(response.data);
-
+      setPosition([response.data.location.lat, response.data.location.lng]);
       setError(null);
     } catch (err) {
       setError(err);
