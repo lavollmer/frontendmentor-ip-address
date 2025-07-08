@@ -20,7 +20,8 @@ function Searchbar() {
             try {
                 // get request through axios
                 // process.env.GEOLOCATION_API
-                const response = await axios.get(process.env.REACT.API.KEY)
+                const apiKey = import.meta.env.VITE_REACT_APP_KEY;
+                const response = await axios.get(apiKey)
                 setLocationData(response.data);
             } catch (err) {
                 setError(err);
