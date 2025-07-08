@@ -55,6 +55,12 @@ This challenge was to build out an IP Address Tracker app and match it to the de
 
 I began by setting up the basics of the program with installing Vite, ReactJS, and other aspects of the program.
 
+The frontend is built in React(Vite) and the backend is an express server in the /server folder. Communication is via REST API and Axios.
+
+The frontend was built by starting with the design ideas.
+
+The backend was built after determining I needed a backend folder instead of running everything in the frontend.  I started by importing the dependencies such as express, cors and dotenv. Express was the main web framework, cors is the middleware to allow the frontend to talk to the backend, and dotenv is to load environment variables. After, I began by intializing the server using an Express application instance and set the PORT to 5000. I set up the middleware functions before running my route handlers to allow different origin requests. Finally, I built the endpoint routes with a basic route and API key route to begin with. The end of the index.js file includes starting the server on the defined port.
+
 
 ### Continued development
 
