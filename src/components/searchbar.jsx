@@ -1,58 +1,50 @@
-import React from 'react'
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Arrow from "../assets/icon-arrow.svg"
 import '../header.css'
 
-function searchbar() {
+function Searchbar() {
     //set usestate to empty string
     const [searchTerm, setSearchTerm] = useState('')
+    // Manage the state of location data, error, and loading
+    const [locationData, setLocationData] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const handleChange = (event) => {
         setSearchTerm(event.target.value);
-        onSearch(event.target.value);
+    }
+    // use effect to run fetchLocation when component mounts, empty dependency array runs once
+    const handleSearch = async() => {{
+            setLoading(true);
+            try {
+                // get request through axios
+                // process.env.GEOLOCATION_API
+                const response = await axios.get('https://geo.ipify.org/api/v2/country?apiKey=at_gVO7K7aIuD2FB8QyhWeZ5CiqXc77X&ipAddress=${searchTerm}')
+                setLocationData(response.data);
+            } catch (err) {
+                setError(err);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchLocation();
+    };
+
+    if (error) {
+        return <div>{error.message}</div>
     }
 
-      // Manage the state of location data, error, and loading
-  const [locationData, setLocationData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  // use effect to run fetchLocation when component mounts, empty dependency array runs once
-  useEffect(() => {
-    const fetchLocation = async ({searchTerm}) => {
-      setLoading(true);
-      try {
-        // get request through axios
-        // process.env.GEOLOCATION_API
-        const response = await axios.get('https://geo.ipify.org/api/v2/country?apiKey=at_gVO7K7aIuD2FB8QyhWeZ5CiqXc77X&ipAddress=8.8.8.8')
-        if (!response.ok){
-          throw new Error ('Network response was not ok.')
-        }
-        const result = await response.json();
-        setLocationData(result);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchLocation();
-  }, [searchTerm]);
-
-  if (error) {
-    return <div>{error.message}</div>
-  }
-
-  if (loading) return <div>Loading ...</div>;
+    if (loading) return <div>Loading ...</div>;
 
     return (
         <div className="search-container">
             <input type="text" name="search" value={searchTerm} onChange={handleChange} placeholder="Search for an IP address or domain" />
-            <button className="search-button">
+            <button className="search-button" onClick={handleSearch}>
                 <img src={Arrow} alt="Search Icon" />
             </button>
         </div>
     )
 }
 
-export default searchbar
+export default Searchbar
