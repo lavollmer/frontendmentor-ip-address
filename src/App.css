@@ -42,106 +42,110 @@ body {
 }
 
 .header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
 }
 
 .title-container {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    font-Family: 'Rubik', sans-serif;
-    font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-Family: 'Rubik', sans-serif;
+  font-size: x-large;
 }
 
 .desktop-background {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 .search-container {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    ;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  ;
 }
 
 .search-button {
-    background-color: black;
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20%;
-    border-radius: 10px;
-    padding: 12px;
+  background-color: black;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20%;
+  border-radius: 10px;
+  padding: 12px;
 }
 
 .header-text {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 input {
-    flex-direction: row;
-    padding: 14px;
-    padding-right: 10px;
-    width: 100%;
-    border-radius: 10px;
-    font-Family: 'Rubik', sans-serif;
-    box-sizing: border-box;
-    color: hsl(0, 0%, 59%);
+  flex-direction: row;
+  padding: 14px;
+  padding-right: 10px;
+  width: 100%;
+  border-radius: 10px;
+  font-Family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+  color: hsl(0, 0%, 59%);
 }
 
 h1 {
-    font-size: small;
-    font-Family: 'Rubik', sans-serif;
-    color: grey;
+  font-size: small;
+  font-Family: 'Rubik', sans-serif;
+  color: grey;
 }
 
 h2 {
-    font-size: large;
-    font-Family: 'Rubik', sans-serif;
+  font-size: large;
+  font-Family: 'Rubik', sans-serif;
 }
 
 .ip-search {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 10px;
-    width: 80%;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  width: 80%;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
 }
 
 .search-box {
-    display: flex;
-    flex-direction: column;
-    padding: 6px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
 }
 
 .line {
-    display: flex;
-    flex-direction: column;
-    width: 1px;
-    background-color: black;
-    height: 60%;
-    margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 1px;
+  background-color: black;
+  height: 60%;
+  margin-top: 16px;
 }
 
 .desktop-ip {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top:180px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 180px;
+  width: 100%;
+}
+
+#map {
+  height: 180px;
 }

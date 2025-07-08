@@ -1,5 +1,4 @@
 import './App.css'
-import Ipaddress from "./components/ipaddress"
 import DesktopImage from "./assets/pattern-bg-desktop.png";
 import { useState, useEffect } from 'react';
 import Map from "./components/map";
@@ -81,7 +80,10 @@ function App() {
               <p>{locationData?.isp ?? 'Loading..'}</p>
             </div>
           </div>
-          {/* <Map locationData={locationData} /> */}
+          {/* Leaflet Map */}
+          <div>
+            <div id="map"></div>
+          </div>
         </div>
       )
       }
