@@ -1,7 +1,6 @@
 import './App.css'
 import DesktopImage from "./assets/pattern-bg-desktop.png";
 import { useState, useEffect } from 'react';
-import Map from "./components/map";
 import axios from 'axios';
 import Arrow from "./assets/icon-arrow.svg"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
