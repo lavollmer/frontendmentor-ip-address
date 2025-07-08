@@ -59,8 +59,8 @@ function App() {
         <div>Loading ... </div>
       ) : (
         <div className='desktop-ip'>
-          <Ipaddress data={locationData} />
-          <Map data={locationData} />
+          <h1><Ipaddress locationData={locationData} /></h1>
+          <h1><Map locationData={locationData} /></h1>
         </div>
       )
       }

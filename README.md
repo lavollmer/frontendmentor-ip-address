@@ -76,6 +76,7 @@ The backend was built after determining I needed a backend folder instead of run
 10. useEffect hooks cannot be called inside any nested functions or conditionals. They must be called at the top level of a functional component.
 11. When I was working on restructuring my code, I was able to successfully connect the server and frontend. I realized during it that I had set loading to true which constantly made the page white with the word Loading on it. I intialized loading as true but never fetched the data when the component first loadded. I fixed it by only setting loading to true when a search starts otherwise it is set to false.
 12. Received this console error - net::ERR_SSL_PROTOCOL_ERROR. I learned about HTTP vs HTTPS. HTTP is for regular internet traffic and HTTPS is the secure version. I was asking for a secure connection with https in the code, and my browser was expecting encryption. My server was running on HTTP which doesn't do encryption. The error happens becuase the browser will not continue because it does not match.
+13. A simple mistake but impactful. The .env file containing the API key only should include the code given, not including quotes and search URL.
 
 ### Useful resources
 
