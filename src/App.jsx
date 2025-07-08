@@ -1,11 +1,9 @@
 import './App.css'
 import Ipaddress from "./components/ipaddress"
 import DesktopImage from "./assets/pattern-bg-desktop.png";
-// import Header from "./components/header"
-// import Map from "./components/map"
 import { useState } from 'react';
 import axios from 'axios';
-import { useEffect } from 'react';
+import Arrow from "./assets/icon-arrow.svg"
 
 function App() {
   //set searchTerm state as empty string
@@ -13,7 +11,7 @@ function App() {
   //set location data as null
   const [locationData, setLocationData] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
@@ -60,11 +58,11 @@ function App() {
       ) : (
         <div className='desktop-ip'>
           <Ipaddress data={locationData} />
+          <Map data={locationData} />
         </div>
       )
-    }
-        // <Map />     
-      </>
+      }
+    </>
   )
 }
 

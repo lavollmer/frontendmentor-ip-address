@@ -1,5 +1,5 @@
 
-function Ipaddress({ coordinates, country, timezone, isp }) {
+function Ipaddress({ locationData }) {
     return (
         <div className='ip-search'>
             <div className='search-box'>

@@ -74,6 +74,7 @@ The backend was built after determining I needed a backend folder instead of run
 8. I built the API key to search the current user's IP when I wanted it to update when the searchTerm changed. I have to update the searchTerm in the request so it would actually change based on the dependency array.
 9. I created a button for the search bar; however, it did not have any behavior assigned to it. The button is expected to trigger the search, but needed a handleClick. I added a onClick event to trigger and event.
 10. useEffect hooks cannot be called inside any nested functions or conditionals. They must be called at the top level of a functional component.
+11. When I was working on restructuring my code, I was able to successfully connect the server and frontend. I realized during it that I had set loading to true which constantly made the page white with the word Loading on it. I intialized loading as true but never fetched the data when the component first loadded. I fixed it by only setting loading to true when a search starts otherwise it is set to false.
 
 ### Useful resources
 
