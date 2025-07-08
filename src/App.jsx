@@ -46,7 +46,7 @@ function App() {
         <div className="header-container">
           <img src={DesktopImage} alt="Desktop Background" className="desktop-background" />
           <div className='header-text'>
-            <h1 className='title-container'>IP Address Tracker</h1>
+            <h1 className='title-container font-bold'>IP Address Tracker</h1>
             <div className="search-container">
               <input type="text" name="search" value={searchTerm} onChange={handleChange} placeholder="Search for an IP address or domain" />
               <button className="search-button" onClick={handleSearch}>
