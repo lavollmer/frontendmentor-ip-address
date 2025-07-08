@@ -81,6 +81,7 @@ The backend was built after determining I needed a backend folder instead of run
 ### Useful resources
 
 - React Leaflet Tutorial for Beginners (2023) - https://www.youtube.com/watch?v=jD6813wGdBA&t=467s
+- Leaflet - https://leafletjs.com/
 
 ## Author
 
