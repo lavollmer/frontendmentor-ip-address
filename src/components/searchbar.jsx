@@ -7,9 +7,9 @@ function Searchbar() {
     //set usestate to empty string
     const [searchTerm, setSearchTerm] = useState('')
     // Manage the state of location data, error, and loading
-    // const [locationData, setLocationData] = useState(null);
-    // const [error, setError] = useState(null);
-    // const [loading, setLoading] = useState(true);
+    const [locationData, setLocationData] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const handleChange = (event) => {
         setSearchTerm(event.target.value);

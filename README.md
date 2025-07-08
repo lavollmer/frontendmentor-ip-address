@@ -73,6 +73,7 @@ The backend was built after determining I needed a backend folder instead of run
 7. I was debugging my searchbar and found that Fetch API is different than Axios in terms of code. Axios doesn't have .ok or .json() because it automatically parses JSON and throws errors for specific codes.
 8. I built the API key to search the current user's IP when I wanted it to update when the searchTerm changed. I have to update the searchTerm in the request so it would actually change based on the dependency array.
 9. I created a button for the search bar; however, it did not have any behavior assigned to it. The button is expected to trigger the search, but needed a handleClick. I added a onClick event to trigger and event.
+10. useEffect hooks cannot be called inside any nested functions or conditionals. They must be called at the top level of a functional component.
 
 ### Useful resources
 

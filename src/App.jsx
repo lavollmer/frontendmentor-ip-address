@@ -1,26 +1,60 @@
 import './App.css'
 import Ipaddress from "./components/ipaddress"
-import Header from "./components/header"
+import DesktopImage from "./assets/pattern-bg-desktop.png";
+// import Header from "./components/header"
 import Map from "./components/map"
-import {useState} from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 
 function App() {
-  const [country, setCountry] = useState('')
+  //set searchTerm state as empty string
+  const [searchTerm, setSearchTerm] = useState('')
+  //set location data as null
+  const [locationData, setLocationData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    axios.get('http://localhost:5000/api/data')
-    .then(res => console.log(res.data))
-    .catch(err => console.error(err))
-  },[{searchTerm}])
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  }
+  // use effect to run fetchLocation when component mounts, empty dependency array runs once
+  const handleSearch = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get('http://localhost:5000/api/data?query=${searchTerm}')
+      setLocationData(response.data);
+      setError(null);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (error) {
+    return <div>{error.message}</div>
+  }
+
+  if (loading) return <div>Loading ...</div>;
 
   return (
     <>
       <div className='desktop-background'>
-        <Header />
+        <div className="header-container">
+          <img src={DesktopImage} alt="Desktop Background" className="desktop-background" />
+          <div className='header-text'>
+            <h1 className='title-container'>IP Address Tracker</h1>
+            <div className="search-container">
+              <input type="text" name="search" value={searchTerm} onChange={handleChange} placeholder="Search for an IP address or domain" />
+              <button className="search-button" onClick={handleSearch}>
+                <img src={Arrow} alt="Search Icon" />
+              </button>
+            </div>
+          </div>
+        </div>
         <div className='desktop-ip'>
-          <Ipaddress />
+          {/* <Ipaddress value={[coordinates, country, timezone, isp]} /> */}
         </div>
         <Map />
       </div>
