@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Map from "./components/map";
 import axios from 'axios';
 import Arrow from "./assets/icon-arrow.svg"
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 
 function App() {
   //set searchTerm state as empty string
@@ -12,6 +14,9 @@ function App() {
   const [locationData, setLocationData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  // map position
+  const position = [51.505, -0.09];
 
   // When the app starts, something will load
   useEffect(() => {
@@ -82,7 +87,20 @@ function App() {
           </div>
           {/* Leaflet Map */}
           <div>
-            <div id="map"></div>
+            {/* Map Container taking center coordinates and zoom level as props */}
+            <MapContainer center={position} zoom={13} style={{ height: "500px" }}>>
+              {/* Tile layer specifies the tile server */}
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              {/* marker adds specific location */}
+              <Marker position={position}>
+                <Popup>
+                  {locationData.location.city}
+                </Popup>
+              </Marker>
+            </MapContainer>
           </div>
         </div>
       )
