@@ -86,9 +86,9 @@ function App() {
             </div>
           </div>
           {/* Leaflet Map */}
-          <div>
+          <div className='leaflet-container'>
             {/* Map Container taking center coordinates and zoom level as props */}
-            <MapContainer center={position} zoom={13} style={{ height: "500px" }}>>
+            <MapContainer center={position} zoom={13}>
               {/* Tile layer specifies the tile server */}
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -96,8 +96,9 @@ function App() {
               />
               {/* marker adds specific location */}
               <Marker position={position}>
+                {/* Displays marker when popup is selected */}
                 <Popup>
-                  {locationData.location.city}
+                  <h1>Hello</h1>
                 </Popup>
               </Marker>
             </MapContainer>
