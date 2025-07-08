@@ -40,7 +40,7 @@ function App() {
       <div className='desktop-background'>
         <Header />
         <div className='desktop-ip'>
-          <Ipaddress address />
+          <Ipaddress />
         </div>
         <div>
           {JSON.stringify(locationData)}
