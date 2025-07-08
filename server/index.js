@@ -1,5 +1,6 @@
 const express = require ('express');
 const cors = require('cors');
+const axios = require('axios');
 require('dotenv').config()
 
 const app = express();
@@ -14,8 +15,16 @@ app.get('/api/hello', (req,res)=> {
 })
 
 app.get('/api/data', async(req, res) => {
+    const searchTerm = req.query.query;
     const apiKey = process.env.VITE_REACT_APP_KEY;
-    res.json({apiKey});
+
+    try {
+        const response = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${searchTerm}`)
+        res.json(response.data);
+    } catch {
+        console.error('Error fetching data.')
+        res.status(500).json({error: "Failed to fetch location data."})
+    }
 })
 
 app.listen(PORT, () => {
