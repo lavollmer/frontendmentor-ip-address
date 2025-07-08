@@ -2,7 +2,7 @@ import './App.css'
 import Ipaddress from "./components/ipaddress"
 import DesktopImage from "./assets/pattern-bg-desktop.png";
 // import Header from "./components/header"
-import Map from "./components/map"
+// import Map from "./components/map"
 import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
@@ -53,12 +53,18 @@ function App() {
             </div>
           </div>
         </div>
-        <div className='desktop-ip'>
-          {/* <Ipaddress value={[coordinates, country, timezone, isp]} /> */}
-        </div>
-        <Map />
       </div>
-    </>
+      {error && <div>{error.message}</div>}
+      {loading ? (
+        <div>Loading ... </div>
+      ) : (
+        <div className='desktop-ip'>
+          <Ipaddress data={locationData} />
+        </div>
+      )
+    }
+        // <Map />     
+      </>
   )
 }
 
