@@ -1,7 +1,8 @@
 import './App.css'
 import Ipaddress from "./components/ipaddress"
 import DesktopImage from "./assets/pattern-bg-desktop.png";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Map from "./components/map";
 import axios from 'axios';
 import Arrow from "./assets/icon-arrow.svg"
 
@@ -13,6 +14,11 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // When the app starts, something will load
+  useEffect (() => {
+    handleSearch();
+  },[])
+
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   }
@@ -20,7 +26,7 @@ function App() {
   const handleSearch = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/data?query=${searchTerm}')
+      const response = await axios.get(`http://localhost:5000/api/data?query=${searchTerm}`)
       setLocationData(response.data);
       setError(null);
     } catch (err) {
@@ -29,12 +35,6 @@ function App() {
       setLoading(false);
     }
   };
-
-  if (error) {
-    return <div>{error.message}</div>
-  }
-
-  if (loading) return <div>Loading ...</div>;
 
   return (
     <>
