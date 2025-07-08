@@ -1,9 +1,12 @@
 import React from "react";
 
-function Map({locationData}) {
+function Map({ locationData }) {
     return (
         <>
-            <h1>Map</h1>
+            <div>
+                <h1>{locationData}</h1>
+            </div>
+
         </>
     )
 }

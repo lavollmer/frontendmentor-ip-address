@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import Map from "./components/map";
 import axios from 'axios';
 import Arrow from "./assets/icon-arrow.svg"
-import './header.css'
 
 function App() {
   //set searchTerm state as empty string
