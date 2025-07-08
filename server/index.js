@@ -14,7 +14,7 @@ app.get('/api/hello', (req,res)=> {
 })
 
 app.get('/api/data', async(req, res) => {
-    const apiKey = process.env.API_KEY;
+    const apiKey = process.env.VITE_REACT_APP_KEY;
     res.json({apiKey});
 })
 
