@@ -13,22 +13,22 @@ function Ipaddress({ locationData }) {
         <div className='ip-search'>
             <div className='search-box'>
                 <h1>IP ADDRESS</h1>
-                <h2>{locationData.ip}</h2>
+                <p>{locationData.ip}</p>
             </div>
             <div className='line'></div>
             <div className='search-box'>
                 <h1>LOCATION</h1>
-                <h2>{locationData.location.city}</h2>
+                <p>{locationData.location.city}</p>
             </div>
             <div className='line'></div>
             <div className='search-box'>
                 <h1>TIMEZONE</h1>
-                <h2>{locationData.location.timezone}</h2>
+                <p>{locationData.location.timezone}</p>
             </div>
             <div className='line'></div>
             <div className='search-box'>
                 <h1>ISP</h1>
-                <h2>{locationData.isp}</h2>
+                <p>{locationData.isp}</p>
             </div>
         </div>
     )

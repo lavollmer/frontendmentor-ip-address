@@ -15,9 +15,9 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   // When the app starts, something will load
-  useEffect (() => {
-    handleSearch();
-  },[])
+  useEffect(() => {
+    if (searchTerm) handleSearch();
+  }, [])
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
@@ -26,10 +26,11 @@ function App() {
   const handleSearch = async () => {
     setLoading(true);
     try {
+      const query = searchTerm || '8.8.8.8'
       const response = await axios.get(`http://localhost:5000/api/data?query=${searchTerm}`)
       console.log(response.data);
       setLocationData(response.data);
-      
+
       setError(null);
     } catch (err) {
       setError(err);
@@ -59,8 +60,28 @@ function App() {
         <div>Loading ... </div>
       ) : (
         <div className='desktop-ip'>
-          <h1><Ipaddress locationData={locationData} /></h1>
-          <h1><Map locationData={locationData} /></h1>
+          <div className='ip-search'>
+            <div className='search-box'>
+              <h1>IP ADDRESS</h1>
+              <p>{locationData?.ip ?? 'Loading ..'}</p>
+            </div>
+            <div className='line'></div>
+            <div className='search-box'>
+              <h1>LOCATION</h1>
+              <p>{locationData?.location?.city ?? 'Loading ..'}</p>
+            </div>
+            <div className='line'></div>
+            <div className='search-box'>
+              <h1>TIMEZONE</h1>
+              <p>{locationData?.location?.timezone ?? 'Loading...'}</p>
+            </div>
+            <div className='line'></div>
+            <div className='search-box'>
+              <h1>ISP</h1>
+              <p>{locationData?.isp ?? 'Loading..'}</p>
+            </div>
+          </div>
+          {/* <Map locationData={locationData} /> */}
         </div>
       )
       }
