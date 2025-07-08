@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import DesktopImage from "../assets/pattern-bg-desktop.png";
-import MobileImage from "../assets/pattern-bg-mobile.png";
+// import MobileImage from "../assets/pattern-bg-mobile.png";
 import Search from "./searchbar"
 import '../header.css';
 

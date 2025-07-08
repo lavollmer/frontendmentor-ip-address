@@ -3,7 +3,7 @@ import {useState} from 'react';
 import Arrow from "../assets/icon-arrow.svg"
 import '../header.css'
 
-function searchbar({onSearch}) {
+function searchbar() {
     //set usestate to empty string
     const [searchTerm, setSearchTerm] = useState('')
 

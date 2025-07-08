@@ -5,7 +5,7 @@ import Map from "./components/map"
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function App() {
+function App({searchTerm}) {
   // Manage the state of location data, error, and loading
   const [locationData, setLocationData] = useState(null);
   const [error, setError] = useState(null);
@@ -14,20 +14,24 @@ function App() {
   // use effect to run fetchLocation when component mounts, empty dependency array runs once
   useEffect(() => {
     const fetchLocation = async () => {
+      setLoading(true);
       try {
         // get request through axios
         // process.env.GEOLOCATION_API
-        const API = process.env.GEOLOCATION_API
-        const response = await axios.get('API')
-        setLocationData(response.data);
+        const response = await axios.get(process.env.GEOLOCATION_API)
+        if (!response.ok){
+          throw new Error ('Network response was not ok.')
+        }
+        const result = await response.json();
+        setLocationData(result);
       } catch (err) {
-        setError('Error fetching location data.');
+        setError(err);
       } finally {
         setLoading(false);
       }
     };
     fetchLocation();
-  }, []);
+  }, [searchTerm]);
 
   if (error) {
     return <div>{error.message}</div>
