@@ -79,5 +79,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
   "description": ""
+=======
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0"
+  }
+>>>>>>> 21983040d5863206ea0cbef3525e12f73c698c21
 }

@@ -63,6 +63,10 @@ I began by setting up the basics of the program with installing Vite, ReactJS, a
 3. Creating the small grey line between the IP Address sections. I began by creating a border line positioning to the right of the text div box, but it was giving me an additional line. By creating a separate div for the line it allowed more control and flexibility. 
 4. Axios installment  - Helps with making HTPP request in React application
 5. .env file to protect the API geolocation key
+6. I cleaned up my React component by capitalizing the component name. This is because JSX treats lowercase tags like HTML elements while capitilized as custom components. The code may behave differently than expected.
+7. I was debugging my searchbar and found that Fetch API is different than Axios in terms of code. Axios doesn't have .ok or .json() because it automatically parses JSON and throws errors for specific codes.
+8. I built the API key to search the current user's IP when I wanted it to update when the searchTerm changed. I have to update the searchTerm in the request so it would actually change based on the dependency array.
+9. I created a button for the search bar; however, it did not have any behavior assigned to it. The button is expected to trigger the search, but needed a handleClick. I added a onClick event to trigger and event.
 
 ### Useful resources
 
