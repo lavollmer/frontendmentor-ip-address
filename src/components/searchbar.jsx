@@ -20,7 +20,7 @@ function Searchbar() {
             try {
                 // get request through axios
                 // process.env.GEOLOCATION_API
-                const response = await axios.get('https://geo.ipify.org/api/v2/country?apiKey=at_gVO7K7aIuD2FB8QyhWeZ5CiqXc77X&ipAddress=${searchTerm}')
+                const response = await axios.get(process.env.REACT.API.KEY)
                 setLocationData(response.data);
             } catch (err) {
                 setError(err);
