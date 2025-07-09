@@ -73,12 +73,12 @@ function App() {
               <div className='line-decorate'></div>
               <div className='search-box'>
                 <h1>LOCATION</h1>
-                <p>{locationData?.location?.city ?? 'Loading ..'}</p>
+                <p>{locationData?.location?.city ?? 'Loading ..'}, {locationData?.location?.region ?? 'Loading ..'} {locationData?.location?.postalCode ?? 'Loading ..'}</p>
               </div>
               <div className='line-decorate'></div>
               <div className='search-box'>
                 <h1>TIMEZONE</h1>
-                <p>{locationData?.location?.timezone ?? 'Loading...'}</p>
+                <p>UTC: {locationData?.location?.timezone ?? 'Loading...'}</p>
               </div>
               <div className='line-decorate'></div>
               <div className='search-box'>
