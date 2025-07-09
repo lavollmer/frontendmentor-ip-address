@@ -96,12 +96,6 @@ function App() {
               />
               {/* marker adds specific location */}
               <Marker position={position} icon={Icon}>
-                {/* Displays marker when popup is selected */}
-                {/* {locationData?.location?.city && (
-                  <Popup>
-                    <h1>{locationData.location.city}</h1>
-                  </Popup>
-                )} */}
               </Marker>
             </MapContainer>
           </div>
@@ -109,7 +103,8 @@ function App() {
       )
       }
       <div className='footer'>
-        Created by Laura Dev. All rights reserved. 2025.
+        <p>
+          Created by Laura Dev | 2025.</p>
       </div>
     </>
   )

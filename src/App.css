@@ -115,12 +115,10 @@ h2 {
 }
 
 .line-decorate {
-  display: flex;
-  flex-direction: column;
-  width: 2px;
+  width: 1px;
+  height: 60px;
   background-color: black;
-  height: 60%;
-  margin-top: 16px;
+  margin: 0 20px;
 }
 
 .desktop-ip-display {
