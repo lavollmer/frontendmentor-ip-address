@@ -108,6 +108,9 @@ function App() {
         </div>
       )
       }
+      <div className='footer'>
+        Created by Laura Dev. All rights reserved. 2025.
+      </div>
     </>
   )
 }
