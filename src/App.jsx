@@ -5,6 +5,7 @@ import axios from 'axios';
 import Arrow from "./assets/icon-arrow.svg"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import Icon from "./assets/icon-location.svg";
 
 function App() {
   //set searchTerm state as empty string
@@ -14,6 +15,7 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [position, setPosition] = useState([32.69922, -117.11281]);
+
 
   // When the app starts, something will load
   useEffect(() => {
@@ -61,23 +63,23 @@ function App() {
       {loading ? (
         <div>Loading ... </div>
       ) : (
-        <div className='desktop-ip'>
+        <div className='desktop-ip-display'>
           <div className='ip-search'>
             <div className='search-box'>
               <h1>IP ADDRESS</h1>
               <p>{locationData?.ip ?? 'Loading ..'}</p>
             </div>
-            <div className='line'></div>
+            <div className='line-decorate'></div>
             <div className='search-box'>
               <h1>LOCATION</h1>
               <p>{locationData?.location?.city ?? 'Loading ..'}</p>
             </div>
-            <div className='line'></div>
+            <div className='line-decorate'></div>
             <div className='search-box'>
               <h1>TIMEZONE</h1>
               <p>{locationData?.location?.timezone ?? 'Loading...'}</p>
             </div>
-            <div className='line'></div>
+            <div className='line-decorate'></div>
             <div className='search-box'>
               <h1>ISP</h1>
               <p>{locationData?.isp ?? 'Loading..'}</p>
@@ -93,10 +95,10 @@ function App() {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               {/* marker adds specific location */}
-              <Marker position={position}>
+              <Marker position={position} icon={Icon}>
                 {/* Displays marker when popup is selected */}
                 <Popup>
-                  <h1>Hello</h1>
+                  <h1>{locationData.location.country}</h1>
                 </Popup>
               </Marker>
             </MapContainer>
