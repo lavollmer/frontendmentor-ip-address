@@ -12,8 +12,7 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
+  - [Development and Learning](#development-and-learning)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -67,20 +66,7 @@ Mobile IP Address Screenshot Laura Dev Website
 - Geolocation IPify API
 - Vite
 
-### What I learned
-
-This challenge was to build out an IP Address Tracker app and match it to the design portfolio as much as possible. The IP Address locations will be using IP Geolocation API by IPify and generating the map with LeafletJS. 
-
-I began by setting up the basics of the program with installing Vite, ReactJS, and other aspects of the program.
-
-The frontend is built in React(Vite) and the backend is an express server in the /server folder. Communication is via REST API and Axios.
-
-The frontend was built by starting with the design portfolio given. 
-
-The backend was built after determining I needed a backend folder instead of running everything in the frontend.  I started by importing the dependencies such as express, cors and dotenv. Express was the main web framework, cors is the middleware to allow the frontend to talk to the backend, and dotenv is to load environment variables. After, I began by intializing the server using an Express application instance and set the PORT to 5000. I set up the middleware functions before running my route handlers to allow different origin requests. Finally, I built the endpoint routes with a basic route and API key route to begin with. The end of the index.js file includes starting the server on the defined port.
-
-
-### Continued development
+### Development and Learning
 
  1. HTML Structure for Input and Button
 You can't place a `<button>` inside an `<input>` tag because `<input>` is self-closing. This lets you position the button over the input without affecting the layout. To achieve the look of a button inside a search field:
@@ -148,9 +134,9 @@ REACT_APP_API_KEY=yourKeyHere
 
 ## Useful resources
 
-- React Leaflet Tutorial for Beginners (2023) - https://www.youtube.com/watch?v=jD6813wGdBA&t=467s
-- Leaflet - https://leafletjs.com/
-- Geolocation IPify 
+- React Leaflet Tutorial for Beginners (2023) (https://www.youtube.com/watch?v=jD6813wGdBA&t=467s)
+- Leaflet (https://leafletjs.com/)
+- Geolocation IPify (https://geo.ipify.org/)
 
 ## Author
 
