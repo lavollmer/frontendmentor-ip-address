@@ -21,6 +21,7 @@ function App() {
   }, [])
 
   const handleChange = (e) => {
+    e.preventDefault();
     setSearchTerm(e.target.value);
   }
   // use effect to run fetchLocation when component mounts, empty dependency array runs once
