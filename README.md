@@ -48,7 +48,7 @@ Mobile IP Address Screenshot Laura Dev Website
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Laura Dev Solution](https://www.frontendmentor.io/solutions/reactjs-leafletjs-vite-node-flexbox-grid-ip-geolocation-slUHzJs-z1)
 - Live Site URL: [Laura Dev IP Address](https://lauradev-ip-address.netlify.app/)
 
 ## My process

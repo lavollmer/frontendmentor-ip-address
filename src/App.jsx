@@ -3,7 +3,7 @@ import DesktopImage from "./assets/pattern-bg-desktop.png";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Arrow from "./assets/icon-arrow.svg"
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import Icon from "./icon";
 
@@ -22,6 +22,7 @@ function App() {
     if (searchTerm) handleSearch();
   }, [])
 
+  // handleChange for searching
   const handleChange = (e) => {
     e.preventDefault();
     setSearchTerm(e.target.value);
