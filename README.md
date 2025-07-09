@@ -67,7 +67,6 @@ Mobile IP Address Screenshot Laura Dev Website
 - Geolocation IPify API
 - Vite
 
-
 ### What I learned
 
 This challenge was to build out an IP Address Tracker app and match it to the design portfolio as much as possible. The IP Address locations will be using IP Geolocation API by IPify and generating the map with LeafletJS. 
@@ -76,36 +75,85 @@ I began by setting up the basics of the program with installing Vite, ReactJS, a
 
 The frontend is built in React(Vite) and the backend is an express server in the /server folder. Communication is via REST API and Axios.
 
-The frontend was built by starting with the design ideas.
+The frontend was built by starting with the design portfolio given. 
 
 The backend was built after determining I needed a backend folder instead of running everything in the frontend.  I started by importing the dependencies such as express, cors and dotenv. Express was the main web framework, cors is the middleware to allow the frontend to talk to the backend, and dotenv is to load environment variables. After, I began by intializing the server using an Express application instance and set the PORT to 5000. I set up the middleware functions before running my route handlers to allow different origin requests. Finally, I built the endpoint routes with a basic route and API key route to begin with. The end of the index.js file includes starting the server on the defined port.
 
 
 ### Continued development
 
-1. You cannot put a button inside of an <input> tag because it is self-closing. You can achieve the visual effect of a button inside a search input field using HTML and CSS positioning. Wrap both the button and input into the parent <div>. Se the container's position to relative and set the button's position to absolute which removes it from the normal document flow.
-2. I was having a syntax error within my App.jsx file which was unexpected. I was receiving the error of "unexpected token error". I realized while coding I had added an extra import statement at the top of my file without any additional information therefore the program was unable to determine the next steps.
-3. Creating the small grey line between the IP Address sections. I began by creating a border line positioning to the right of the text div box, but it was giving me an additional line. By creating a separate div for the line it allowed more control and flexibility. 
-4. Axios installment  - Helps with making HTPP request in React application
-5. .env file to protect the API geolocation key
-6. I cleaned up my React component by capitalizing the component name. This is because JSX treats lowercase tags like HTML elements while capitilized as custom components. The code may behave differently than expected.
-7. I was debugging my searchbar and found that Fetch API is different than Axios in terms of code. Axios doesn't have .ok or .json() because it automatically parses JSON and throws errors for specific codes.
-8. I built the API key to search the current user's IP when I wanted it to update when the searchTerm changed. I have to update the searchTerm in the request so it would actually change based on the dependency array.
-9. I created a button for the search bar; however, it did not have any behavior assigned to it. The button is expected to trigger the search, but needed a handleClick. I added a onClick event to trigger and event.
-10. useEffect hooks cannot be called inside any nested functions or conditionals. They must be called at the top level of a functional component.
-11. When I was working on restructuring my code, I was able to successfully connect the server and frontend. I realized during it that I had set loading to true which constantly made the page white with the word Loading on it. I intialized loading as true but never fetched the data when the component first loadded. I fixed it by only setting loading to true when a search starts otherwise it is set to false.
-12. Received this console error - net::ERR_SSL_PROTOCOL_ERROR. I learned about HTTP vs HTTPS. HTTP is for regular internet traffic and HTTPS is the secure version. I was asking for a secure connection with https in the code, and my browser was expecting encryption. My server was running on HTTP which doesn't do encryption. The error happens becuase the browser will not continue because it does not match.
-13. A simple mistake but impactful. The .env file containing the API key only should include the code given, not including quotes and search URL.
-14. Created custom Leaflet marker and icon.
+ 1. HTML Structure for Input and Button
+You can't place a `<button>` inside an `<input>` tag because `<input>` is self-closing. This lets you position the button over the input without affecting the layout. To achieve the look of a button inside a search field:
 
-### Useful resources
+- Wrap the input and button in a `<div>`.
+- Set the container's `position` to `relative`.
+- Set the button's `position` to `absolute`.
+
+ 2. Unexpected Syntax Error in `App.jsx`
+I encountered an "unexpected token" error caused by an incomplete `import` statement. Always ensure your imports are complete—missing or partial imports will break the app.
+
+
+ 3. Creating a Divider Between IP Address Sections
+Initially, I used a right border on a text `<div>` for a divider, but it added an extra line. Creating a separate `<div>` for the line gave better control and cleaner design.
+
+
+ 4. Installing Axios
+I installed **Axios** to handle HTTP requests in the React app.  
+Axios is a powerful alternative to Fetch and simplifies handling JSON and error responses.
+
+
+ 5. Protecting API Keys with `.env`
+I stored the API key in a `.env` file to keep it secure and out of version control. This also helps when working across multiple environments.
+
+ 6. React Component Naming
+I updated component names to use **PascalCase** (e.g., `SearchBar`).  
+JSX treats lowercase tags as native HTML, so using uppercase tells React it's a custom component.
+
+
+ 7. Axios vs Fetch
+Axios automatically parses JSON and throws errors for failed requests. Unlike Fetch, there’s no need to check `.ok` or call `.json()`.
+
+
+ 8. Updating API on Search Term Change
+To ensure the API request updates with the search term:
+
+- Pass `searchTerm` directly into the request.
+- Include it in the `useEffect` dependency array to re-run when it changes.
+
+
+ 9. Search Button Behavior
+I added a search button, but initially forgot to add logic. I fixed this by adding an `onClick` handler to trigger the search.
+
+ 10. Proper Use of `useEffect`
+`useEffect` must be called at the **top level** of a functional component. It can't be used inside conditionals or nested functions.
+
+ 11. Loading State Fix
+The app was stuck showing "Loading..." because:
+
+- `loading` was initialized as `true`.
+- I forgot to fetch data on initial render.
+
+ 12. `net::ERR_SSL_PROTOCOL_ERROR`
+The browser blocks the connection due to an insecure protocol mismatch. Use the correct protocol based on the server configuration.This error occurred because:
+
+- I used `https://` in my request.
+- My server was running on `http://`.
+
+ 13. `.env` File Formatting
+The `.env` file should include only key-value pairs.  
+Avoid quotes or full URLs. Example:
+```env
+REACT_APP_API_KEY=yourKeyHere
+```
+
+## Useful resources
 
 - React Leaflet Tutorial for Beginners (2023) - https://www.youtube.com/watch?v=jD6813wGdBA&t=467s
 - Leaflet - https://leafletjs.com/
+- Geolocation IPify 
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
+- Website - [Laura V](www.lauradeveloper.com)
+- Frontend Mentor - [@lavollmer](https://www.frontendmentor.io/profile/lavollmer)
+- Github - [@lavollmer](https://github.com/lavollmer)
