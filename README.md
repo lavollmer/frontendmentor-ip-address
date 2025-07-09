@@ -1,5 +1,7 @@
 # Frontend Mentor - IP address tracker solution
 
+This project is an interactive IP Address Tracker that allows users to input an IP address and view its associated geographic location on a map, rendered using Leaflet.js.
+
 This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
@@ -17,6 +19,17 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 
 ## Overview
 
+This project is an interactive IP Address Tracker that allows users to input an IP address and view its associated geographic location on a map, rendered using Leaflet.js.
+
+Key Features:
+- IP Geolocation Lookup: Utilizes a geolocation API (e.g., IP Geolocation or IPify) to fetch data such as city, region, country, and coordinates from the entered IP address.
+
+- Dynamic Map Integration: Displays the location on a Leaflet-powered map, complete with custom markers and popups.
+
+- Responsive Design: Built with mobile-first principles using modern CSS techniques and media queries to ensure full usability across devices.
+
+- Real-time Input Handling: Users can input any valid IP address, and the application dynamically fetches and displays updated information and map view.
+
 ### The challenge
 
 Users should be able to:
@@ -28,12 +41,16 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+Desktop IP Address Screenshot Laura Dev Website
+![Desktop IP Address Screenshot](./src/assets/desktop-ipaddress-readme.png)
+
+Mobile IP Address Screenshot Laura Dev Website
+![Mobile IP Address Screenshot](./src/assets/mobile-ipaddress-readme.png)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Laura Dev IP Address](https://lauradev-ip-address.netlify.app/)
 
 ## My process
 
@@ -45,8 +62,10 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Node
+- Leaflet API
+- Geolocation IPify API
+- Vite
 
 
 ### What I learned
