@@ -1,15 +1,16 @@
 import L from 'leaflet';
+import iconLocationImg from "./assets/icon-location.svg"
 
 const iconLocation = new L.Icon({
-    iconUrl: require('../src/assets/icon-location.svg'),
-    iconRetinaUrl: require('../src/assets/icon-location.svg'),
+    iconUrl: iconLocationImg,
+    iconRetinaUrl: iconLocationImg,
     iconAnchor: null,
     popupAnchor: null,
     shadowUrl: null,
     shadowSize: null,
     shadowAnchor: null,
-    iconSize: new L.Point(60, 75),
-    className: 'leaflet-div-icon'
+    iconSize: new L.Point(50, 60),
+    className: ''
 });
 
-export { iconLocation };
+export default iconLocation ;

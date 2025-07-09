@@ -5,7 +5,7 @@ import axios from 'axios';
 import Arrow from "./assets/icon-arrow.svg"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import Icon from "./assets/icon-location.svg";
+import Icon from "./icon";
 
 function App() {
   //set searchTerm state as empty string
@@ -47,7 +47,7 @@ function App() {
     <>
       <div className='container-desktop'>
         <div className="header-container">
-          <img src={DesktopImage} alt="Desktop Background" className='desktop-background'/>
+          <img src={DesktopImage} alt="Desktop Background" className='desktop-background' />
           <div className='header-text'>
             <h1 className='title-container font-bold'>IP Address Tracker</h1>
             <div className="search-container">
@@ -97,9 +97,11 @@ function App() {
               {/* marker adds specific location */}
               <Marker position={position} icon={Icon}>
                 {/* Displays marker when popup is selected */}
-                <Popup>
-                  <h1>{locationData.location.country}</h1>
-                </Popup>
+                {/* {locationData?.location?.city && (
+                  <Popup>
+                    <h1>{locationData.location.city}</h1>
+                  </Popup>
+                )} */}
               </Marker>
             </MapContainer>
           </div>
